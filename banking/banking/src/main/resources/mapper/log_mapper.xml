@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "com.ned.banking.repository.ILocalLogRepository">
+    
+    <select id="getLogByAccountId" resultType="com.ned.banking.model.Log" >
+    	SELECT * FROM log WHERE accountId= #{id}
+    </select>
+    
+    <insert id="insertLog" parameterType="com.ned.banking.model.Log"  useGeneratedKeys="true">
+		INSERT INTO log(accountId, log) VALUES(#{accountId}, #{log})
+	</insert>
+    
+</mapper>	
